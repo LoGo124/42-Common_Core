@@ -6,55 +6,28 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:58:03 by nlopez-g          #+#    #+#             */
-/*   Updated: 2022/09/17 19:02:37 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2022/10/08 15:12:14 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
+#include "libft.h"
 
-unsigned int	ft_strlen(char *str)
-{
-	unsigned int	counter;
-
-	counter = 0;
-	while (*str != '\0')
-	{
-		counter++;
-		str++;
-	}
-	return (counter);
-}
-
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
 	unsigned int	c;
 	unsigned int	d;
 
-	if (size <= ft_strlen(dest))
-		return (size + ft_strlen(src));
-	c = ft_strlen(dest);
+	if (dstsize <= ft_strlen(dst))
+		return (dstsize + ft_strlen(src));
+	c = ft_strlen(dst);
 	d = 0;
-	while (src[d] != '\0' && c + 1 < size)
+	while (src[d] != '\0' && c + 1 < dstsize)
 	{
-		dest[c] = src[d];
+		dst[c] = src[d];
 		c++;
 		d++;
 	}
-	dest[c] = '\0';
-	return (ft_strlen(dest) + ft_strlen(&src[d]));
+	dst[c] = '\0';
+	return (ft_strlen(dst) + ft_strlen(&src[d]));
 }
-/*
-int		main(void)
-{
-	char dest[20] = "123";
-	char src[] = "4567890";
-	unsigned int size = 6;
-	unsigned int result;
-
-	printf("-----\ndest = %s\nsrc = %s\nnb = %d\n\n", dest, src, size);
-	result = ft_strlcat(dest, src, size);
-	printf("dest (cat) = %s\nresult = %d\n-----\n", dest, result);
-
-	return (0);
-}
-*/
