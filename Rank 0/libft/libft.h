@@ -6,7 +6,7 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 14:34:16 by nlopez-g          #+#    #+#             */
-/*   Updated: 2022/10/09 12:33:39 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/01 18:20:25 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define UNUSED	(void)
+//# define UNUSED	(void)
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }				t_list;
-
-typedef struct s_split_next
-{
-	size_t	start;
-	size_t	length;
-}				t_split_next;
-
 
 int		ft_atoi(const char *str);
 
@@ -49,7 +42,7 @@ int		ft_isprint(int c);
 
 char	*ft_itoa(int n);
 
-void	*ft_memcpy(void *dst, const void *src, int c, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 void	*ft_memchr(const void *s, int c, size_t n);
 
@@ -75,9 +68,9 @@ char	*ft_strdup(const char *s1);
 
 char	*ft_strjoin(char const *s1, char const *s2);
 
-size_t	ft_strlcat(char *restrict dst, const char*restrict src, size_t dstsize);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
-size_t	ft_strlcpy(char *restrict dst, const char*restrict src, size_t dstsize);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 size_t	ft_strlen(const char *s);
 

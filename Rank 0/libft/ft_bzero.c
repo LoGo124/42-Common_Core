@@ -6,7 +6,7 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 16:53:55 by nlopez-g          #+#    #+#             */
-/*   Updated: 2022/10/08 15:29:15 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/01 17:44:57 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int	i;
-
-	while (n > 0)
-	{
-		((unsigned char *)s)[i++] = 0;
-		n--;
-	}
+	ft_memset(s, 0, n);
 }
+
+/*
+void main()
+{
+	ft_bzero()
+}
+*/

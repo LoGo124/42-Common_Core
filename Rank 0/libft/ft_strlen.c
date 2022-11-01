@@ -6,7 +6,7 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 19:53:20 by nlopez-g          #+#    #+#             */
-/*   Updated: 2022/10/08 12:52:29 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2022/10/31 13:00:34 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,7 @@
 
 size_t	ft_strlen(const char *str)
 {
-	int	count;
-
-	count = 0;
-	while (*str != '\0')
-	{
-		str++;
-		count++;
-	}
-	return (count);
+	if (!*str)
+		return (0);
+	return (ft_strlen(str + 1) + 1);
 }
