@@ -6,8 +6,17 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 18:11:31 by nlopez-g          #+#    #+#             */
-/*   Updated: 2022/09/24 18:11:32 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/26 21:17:48 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	while (*s)
+	{
+		ft_putchar_fd(*s, fd);
+		s++;
+	}
+}

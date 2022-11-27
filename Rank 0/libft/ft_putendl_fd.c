@@ -6,8 +6,14 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 18:11:12 by nlopez-g          #+#    #+#             */
-/*   Updated: 2022/09/24 18:11:13 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/26 21:26:36 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_putendl_fd(char *s, int fd)
+{
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
+}

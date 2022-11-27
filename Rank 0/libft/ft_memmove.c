@@ -6,7 +6,7 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 18:10:58 by nlopez-g          #+#    #+#             */
-/*   Updated: 2022/11/06 18:55:42 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/26 21:00:10 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	if (!dst && !src)
 		return (NULL);
-	while (len--)
-		ft_memcpy(&dst[len], &src[len], 1);
+	if (src > dst)
+		ft_memcpy(dst, src, len);
+	else
+		while (len--)
+			ft_memset(&dst[len], ((char *)src)[len], 1);
 	return (dst);
 }
 /*
