@@ -6,8 +6,13 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 18:14:25 by nlopez-g          #+#    #+#             */
-/*   Updated: 2022/09/24 18:14:26 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2022/12/24 17:02:08 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+
+}

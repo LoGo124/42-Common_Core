@@ -6,7 +6,7 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:57:40 by nlopez-g          #+#    #+#             */
-/*   Updated: 2022/10/08 15:12:11 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2022/12/23 23:41:36 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	c;
-	int				diff;
+	size_t	c;
+	int		diff;
 
 	c = 0;
 	diff = 0;

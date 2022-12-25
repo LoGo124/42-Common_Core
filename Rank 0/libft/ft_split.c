@@ -6,8 +6,13 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 18:11:51 by nlopez-g          #+#    #+#             */
-/*   Updated: 2022/09/24 18:11:52 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2022/12/24 17:03:07 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	**ft_split(char const *s, char c)
+{
+
+}
