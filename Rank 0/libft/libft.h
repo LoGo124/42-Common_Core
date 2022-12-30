@@ -6,7 +6,7 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 14:34:16 by nlopez-g          #+#    #+#             */
-/*   Updated: 2022/12/24 18:19:13 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2022/12/27 11:27:03 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+
+# include <string.h>
 
 //# define UNUSED	(void)
 
