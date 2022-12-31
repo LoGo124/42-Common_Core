@@ -6,7 +6,7 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 18:12:06 by nlopez-g          #+#    #+#             */
-/*   Updated: 2022/12/27 15:16:12 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2022/12/31 02:23:14 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	while (*s)
 	{
 		if ((char)c == *s)
-		{
 			return (s);
-		}
 		s++;
 	}
 	if (*s == (char)c)
