@@ -6,7 +6,7 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 18:14:13 by nlopez-g          #+#    #+#             */
-/*   Updated: 2022/12/25 19:40:50 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2023/01/02 10:20:27 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	i = 0;
 	if (needle[0] == '\0')
 		return ((char *)haystack);
-	while (haystack[i] && len -1 > i)
+	while (haystack[i] && len > i)
 	{
 		j = 0;
 		while (haystack[i + j] == needle[j] && haystack[i + j] && i + j < len)
@@ -37,13 +37,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-/*
-int	main(void)
-{
-	const char *haystac = "1234567890";
-	const char *needl = "45";
-	size_t len = 4;
-	printf("%s",strnstr(haystac, needl, len));
-	printf("%s",ft_strnstr(haystac, needl, len));
-}
-*/
+
+// int	main(void)
+// {
+// 	const char *haystac = "adios";
+// 	const char *needl = "a";
+// 	size_t len = 1;
+// 	printf("%s\n",strnstr(haystac, needl, len));
+// 	printf("%s\n",ft_strnstr(haystac, needl, len));
+// }
