@@ -6,7 +6,7 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 18:11:51 by nlopez-g          #+#    #+#             */
-/*   Updated: 2023/01/02 13:01:57 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2023/01/03 12:25:20 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,14 @@ int	ft_elemcount(char const *s, char c)
 	start = 0;
 	i = 0;
 	n_elements = 0;
-	if (s[i])
+	if (!c && !*s)
+		return (0);
+	if (s[i] && s[i] != c)
 		n_elements++;
 	while (s[++i])
 	{
-		if (s[i] == c && start)
+		if (s[i] != c && s[i - 1] == c)
 			n_elements++;
-		if (s[i] == c)
-			start = 0;
-		else
-			start++;
 	}
 	return (n_elements);
 }
@@ -67,16 +65,15 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	n_elements = ft_elemcount(s, c);
 	lista = ft_calloc(n_elements + 1, sizeof(char *));
-	if (!s)
+	if (!lista)
 		return (NULL);
 	while (i < n_elements)
 	{
 		if (s[j] != c)
 		{
-			lista[i] = ft_calloc(ft_elemlen((s + j), c) + 1, sizeof(char *));
+			lista[i] = ft_substr(&s[j], 0, ft_elemlen((s + j), c));
 			if (!lista[i])
 				return (ft_gratis(lista));
-			ft_strlcpy(lista[i], (s + j), ft_elemlen((s + j), c) + 1);
 			i++;
 		}
 		j += ft_elemlen((s + j), c) + 1;
@@ -84,25 +81,17 @@ char	**ft_split(char const *s, char c)
 	return (lista);
 }
 
-// A parte de lo de contar más opalabras de las que hay (por culpa del elemcount),
-// te falla el strlcpy ya que ha la variable 'j' le estás sumando el retorno de ft_strlcpy
-// y está función te devuelve el tamaño del src que le has pasado, y claro, tú le estás pasando
-// el tamaño de lo que quieres copiar y eso es lo único que te copia en dst (lista[i]),
-// pero el retorno es de el tamaño total del string que te hayan pasado en el ft_split.
-// De forma que depués de almacenar la primera palabra el valor de la variable j es mayor
-// o igual que el tamaño del string.
-
 /*
 int	main(void)
 {
-	char	*str = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
-	char	sep = ' ';
+	char	*str = "^^^1^^2a,^^^^3^^^^--h^^^^";
+	char	sep = '^';
 	char	**lista = ft_split(str, sep);
 	int		i;
 
 	i = -1;
 	while (lista[++i])
-		printf("-> %s",lista[i]);
-	printf("-> %s",lista[i]);
+		printf("-> %s\tsize = %zu\n",lista[i], ft_strlen(lista[i]));
+	printf("-> %s\n",lista[i]);
 }
 */
