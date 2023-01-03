@@ -6,7 +6,7 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 18:14:32 by nlopez-g          #+#    #+#             */
-/*   Updated: 2022/12/27 13:34:51 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2023/01/03 18:10:03 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*point;
 
+	if (!s)
+		return (NULL);
 	if (ft_strlen(s) <= start)
 		return (ft_strdup(""));
 	if ((ft_strlen(s) - start) < len)

@@ -6,7 +6,7 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 18:12:23 by nlopez-g          #+#    #+#             */
-/*   Updated: 2022/12/27 15:42:37 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2023/01/03 18:25:13 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	i;
 
+	if (!s || !f)
+		return ;
 	i = -1;
 	while (s[++i])
 		f(i, &s[i]);

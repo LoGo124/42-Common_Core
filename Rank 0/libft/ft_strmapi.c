@@ -6,12 +6,13 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 15:18:54 by nlopez-g          #+#    #+#             */
-/*   Updated: 2022/12/30 16:00:30 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2023/01/03 18:41:30 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// (!s || !f) <--- este es mas correcto pero paco no lo pasa.
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		i;
@@ -28,3 +29,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
+/*
+int	main(void)
+{
+	ft_strmapi("hola", NULL);
+	return (0);
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 18:13:33 by nlopez-g          #+#    #+#             */
-/*   Updated: 2022/12/27 11:44:13 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2023/01/03 18:18:45 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*point;
 	size_t	size;		
 
+	if (!s1 || !s2)
+		return (NULL);
 	size = ft_strlen(s1) + ft_strlen(s2);
 	point = ft_calloc(size + 1, sizeof(char));
 	if (!point)

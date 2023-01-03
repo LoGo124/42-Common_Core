@@ -6,7 +6,7 @@
 /*   By: nlopez-g <nlopez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 18:11:51 by nlopez-g          #+#    #+#             */
-/*   Updated: 2023/01/03 12:25:20 by nlopez-g         ###   ########.fr       */
+/*   Updated: 2023/01/03 18:57:28 by nlopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,8 @@ int	ft_elemcount(char const *s, char c)
 	if (s[i] && s[i] != c)
 		n_elements++;
 	while (s[++i])
-	{
 		if (s[i] != c && s[i - 1] == c)
 			n_elements++;
-	}
 	return (n_elements);
 }
 
@@ -63,6 +61,8 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (!s)
+		return (NULL);
 	n_elements = ft_elemcount(s, c);
 	lista = ft_calloc(n_elements + 1, sizeof(char *));
 	if (!lista)
